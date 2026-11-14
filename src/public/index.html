@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <div>
+        <p class="subtitulo">Controle Financeiro Pessoal</p>
+        <h1>Saúde financeira</h1>
+      </div>
+      <a class="botao botao-primario" href="nova-transacao.html">Nova transação</a>
+    </div>
+  </header>
+
+  <main id="dashboard" class="container">
+    <section class="resumo" aria-labelledby="titulo-resumo">
+      <div class="secao-cabecalho">
+        <div>
+          <p class="legenda">Visão geral</p>
+          <h2 id="titulo-resumo">Resumo financeiro</h2>
+        </div>
+        <button id="atualizar" class="botao botao-secundario" type="button">Atualizar</button>
+      </div>
+
+      <div class="metricas">
+        <article class="metrica">
+          <span>Saldo total</span>
+          <strong id="saldoTotal">R$ 0,00</strong>
+        </article>
+        <article class="metrica">
+          <span>Total de despesas</span>
+          <strong id="totalDespesas">R$ 0,00</strong>
+        </article>
+        <article class="metrica metrica-alerta">
+          <span>Gastos por impulso</span>
+          <strong id="totalGastoImpulso">R$ 0,00</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="extrato" aria-labelledby="titulo-extrato">
+      <div class="secao-cabecalho">
+        <div>
+          <p class="legenda">Histórico</p>
+          <h2 id="titulo-extrato">Últimos lançamentos</h2>
+        </div>
+      </div>
+      <p id="statusDashboard" class="status" aria-live="polite"></p>
+      <div id="historico" class="lista-transacoes"></div>
+    </section>
+  </main>
+</body>
+</html>

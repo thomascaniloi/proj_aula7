@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova transação</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <div>
+        <p class="subtitulo">Controle Financeiro Pessoal</p>
+        <h1>Nova transação</h1>
+      </div>
+      <a class="botao botao-secundario" href="index.html">Voltar</a>
+    </div>
+  </header>
+
+  <main class="container container-formulario">
+    <section class="formulario-card" aria-labelledby="titulo-formulario">
+      <p class="legenda">Cadastro</p>
+      <h2 id="titulo-formulario">Registrar lançamento</h2>
+      <p class="texto-apoio">Preencha os dados da receita ou despesa para atualizar seu controle financeiro.</p>
+
+      <form id="formTransacao">
+        <div class="campo">
+          <label for="descricao">Descrição</label>
+          <input id="descricao" name="descricao" type="text" maxlength="100" placeholder="Ex.: Conta de luz" required>
+        </div>
+
+        <div class="campo">
+          <label for="valor">Valor</label>
+          <input id="valor" name="valor" type="number" min="0.01" step="0.01" placeholder="0,00" required>
+        </div>
+
+        <fieldset class="campo grupo-opcoes">
+          <legend>Tipo</legend>
+          <label class="opcao">
+            <input type="radio" name="tipo" value="receita" required>
+            Receita
+          </label>
+          <label class="opcao">
+            <input type="radio" name="tipo" value="despesa" required>
+            Despesa
+          </label>
+        </fieldset>
+
+        <div class="campo">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecione</option>
+            <option value="Renda">Renda</option>
+            <option value="Moradia">Moradia</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Educação">Educação</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <fieldset class="campo grupo-opcoes">
+          <legend>Esse gasto foi consciente?</legend>
+          <label class="opcao">
+            <input type="radio" name="consumoConsciente" value="true" required>
+            Sim, foi essencial ou planejado
+          </label>
+          <label class="opcao">
+            <input type="radio" name="consumoConsciente" value="false" required>
+            Não, foi por impulso
+          </label>
+        </fieldset>
+
+        <p id="statusFormulario" class="status" aria-live="polite"></p>
+        <button class="botao botao-primario botao-largo" type="submit">Salvar transação</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
